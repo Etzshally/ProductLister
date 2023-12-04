@@ -1,0 +1,62 @@
+{
+    "products": [
+      {
+        "id": 101,
+        "name": "Smartphone X",
+        "description": "The latest Smartphone X with advanced features and high-resolution camera.",
+        "price": 799.99,
+        "category": "Electronics",
+        "brand": "TechCo",
+        "color": "Black",
+        "availability": true,
+        "rating": 4.5,
+        "reviews": [
+          {"user": "Customer1", "comment": "Great phone!"},
+          {"user": "Customer2", "comment": "Fast delivery and excellent service."}
+        ]
+      },
+      {
+        "id": 102,
+        "name": "Men's Casual Shirt",
+        "description": "A stylish and comfortable casual shirt for men, perfect for any occasion.",
+        "price": 39.99,
+        "category": "Clothing",
+        "brand": "FashionStyle",
+        "color": "Blue",
+        "size": "Medium",
+        "availability": true,
+        "rating": 4.2,
+        "reviews": [
+          {"user": "Customer3", "comment": "Fits perfectly!"},
+          {"user": "Customer4", "comment": "High-quality fabric."}
+        ]
+      },
+      {
+        "id": 103,
+        "name": "Garden Solar Lights Set",
+        "description": "Set of 6 solar-powered lights for your garden, providing a beautiful ambient glow.",
+        "price": 29.99,
+        "category": "Home and Garden",
+        "brand": "GreenLiving",
+        "material": "Stainless Steel",
+        "power_source": "Solar",
+        "availability": false
+      },
+      {
+        "id": 104,
+        "name": "Educational Building Blocks",
+        "description": "A set of colorful building blocks for children's education and entertainment.",
+        "price": 19.99,
+        "category": "Toys",
+        "brand": "PlayLearn",
+        "age_range": "3-8 years",
+        "availability": true,
+        "rating": 4.0,
+        "reviews": [
+          {"user": "Customer5", "comment": "My kids love these blocks!"},
+          {"user": "Customer6", "comment": "Great for learning shapes and colors."}
+        ]
+      }
+    ]
+  }
+  
