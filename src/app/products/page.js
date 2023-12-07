@@ -1,4 +1,4 @@
-import React from 'react'
+import Link from 'next/link'
 
 export const getProducts = async () => {
   const res = await fetch('http://localhost:3000/api/getProducts', {
@@ -14,10 +14,12 @@ const page = async () => {
     <div>
       {products && products.map((product) => (
         <>
-          <div key={product.id}>
-            <p>product {product.id} details</p>
-            <p>name: {product.name}</p>
-          </div>
+          <Link href={`/product/${product.id}`}>
+            <div className='mt-10 mb-10' key={product.id}>
+              <p>product {product.id} details</p>
+              <p>name: {product.name}</p>
+            </div>
+          </Link>
         </>
       ))}
     </div>
