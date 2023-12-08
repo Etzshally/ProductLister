@@ -11,18 +11,22 @@ export const getProducts = async () => {
 const page = async () => {
   const products = await getProducts()
   return (
-    <div>
-      {products && products.map((product) => (
-        <>
-          <Link href={`/product/${product.id}`}>
-            <div className='mt-10 mb-10' key={product.id}>
-              <p>product {product.id} details</p>
-              <p>name: {product.name}</p>
-            </div>
-          </Link>
-        </>
-      ))}
-    </div>
+    <>
+      <div className='w-full min-h-screen flex flex-col justify-center items-center'>
+        <div className='text-center'>
+          {products && products.map((product) => (
+            <>
+              <Link href={`/product/${product.id}`}>
+                <div className='mt-10 mb-10' key={product.id}>
+                  <p>product {product.id} details</p>
+                  <p>name: {product.name}</p>
+                </div>
+              </Link>
+            </>
+          ))}
+        </div>
+      </div>
+    </>
   )
 }
 
