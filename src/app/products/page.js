@@ -17,7 +17,7 @@ const page = async () => {
           {products && products.map((product) => (
             <>
               <Link href={`/product/${product.id}`}>
-                <div className='mt-10 mb-10' key={product.id}>
+                <div className='bg-red-800 pt-5 pb-5 w-[500px] rounded-xl mt-10 mb-10' key={product.id}>
                   <p>product {product.id} details</p>
                   <p>name: {product.name}</p>
                 </div>
