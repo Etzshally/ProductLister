@@ -7,23 +7,23 @@ export const getProductDetails = async (id) => {
             cache: 'no-store'
         })
         const parsed = await response.json()
-        return parsed
+        return parsed.product[0]
     } catch (error) {
         console.log(error)
     }
 }
 
 const page = async ({ params }) => {
-    const { product } = await getProductDetails(params.id)
+    const product = await getProductDetails(params.id)
     return (
         <>
             <div className='w-full min-h-screen flex flex-col justify-center items-center'>
-                <div className='w-[500px] h-[500px] rounded-xl bg-red-700 flex flex-col justify-center items-center text-white'>
+                <div className='md:w-[500px] h-[500px] rounded-xl bg-red-700 flex flex-col justify-center items-center text-white'>
                     <div key={product.id} className="product-card">
                         <div className="product-details text-center">
                             <h2 className="text-white font-semibold product-name">{product.name}</h2>
                             <p className="product-description">{product.description}</p>
-                            <p className="product-price">${product.price.toFixed(2)}</p>
+                            <p className="product-price">${product.price}</p>
                             <p className="product-category">Category: {product.category}</p>
                             <p className="product-brand">Brand: {product.brand}</p>
                             <p className="product-color">Color: {product.color}</p>
@@ -32,13 +32,22 @@ const page = async ({ params }) => {
                             </p>
                             <div className="product-rating">
                                 <p>Rating: {product.rating}</p>
-                                <div className="product-reviews">
-                                    {product.reviews.map((review, index) => (
-                                        <div key={index} className="review">
-                                            <p className="review-user">{review.user}</p>
-                                            <p className="review-comment">{review.comment}</p>
-                                        </div>
-                                    ))}
+                                <div className="product-reviews bg-black">
+                                    <h1 className='font-semibold'>Reviews</h1>
+                                    { product.reviews.length === 0 ? (
+                                        <>
+                                            <p>No review found</p>
+                                        </>
+                                    ) : (
+                                        <>
+                                            {product.reviews.map((review, index) => (
+                                                <div key={index} className="review">
+                                                    <p className="review-user">{review.user}</p>
+                                                    <p className="review-comment">{review.comment}</p>
+                                                </div>
+                                            ))}
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </div>

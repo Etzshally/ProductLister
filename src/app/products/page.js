@@ -7,7 +7,7 @@ export const getProducts = async () => {
     cache: "no-store",
   })
   const products = await res.json()
-  return products.products
+  return products
 }
 
 const page = async () => {
